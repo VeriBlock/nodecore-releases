@@ -32,7 +32,7 @@ First step is to run a local instance of NodeCore. Whether you mine or use the c
 
 ```
 peer.publish.address=<your_public_IP>
-peer.external.hosts=94.130.33.180\:6500,78.46.106.162\:6500
+peer.external.hosts=173.199.119.135\:6500,45.76.65.101\:6500
 ```
 
 When you first run NodeCore, it will create several other log files in the bin folder, and load the existing blockchain.
@@ -97,7 +97,7 @@ The PoW Miner helps get the next block added to the VeriBlock blockchain. It wil
 
 See this Bitcoin page for background info: [https://en.bitcoin.it/wiki/Running_Bitcoin](https://en.bitcoin.it/wiki/Running_Bitcoin)
 
-1. Download Bitcoin Core [https://bitcoin.org/en/download], and catch up on testnet. This may take a while depending on your network connection.
+1. Download Bitcoin Core https://bitcoin.org/en/download, and catch up on testnet. This may take a while depending on your network connection.
 2. Run bitcoin TestNet by passing in the parameter. 
  1. bitcoin-qt.exe -testnet
 3. Set up a rpc user and password in the bitcoin.conf file
