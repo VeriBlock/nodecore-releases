@@ -8,43 +8,48 @@ General links:
 * Submit any technical issues to github: https://github.com/VeriBlock/nodecore-releases
 * Home page: https://www.veriblock.org
 
-VeriBlock Proof-of-Proof has 4 components:
+VeriBlock Proof-of-Proof has 4 components. Each of these will run in their own command window.
 
-* nodecore-0.1.0.zip - Backend NodeCore instance. 
-* nodecore-reference-pow-0.1.0.zip - Proof-of-Work miner to add next nodecore block
-* nodecore-pop-0.1.0.zip - Proof-of-Proof mining
-* nodecore-cli-0.1.0.zip - Command Line. Use this to send transactions.
+* nodecore-*.zip - Backend NodeCore instance. 
+* nodecore-reference-pow-*.zip - Proof-of-Work miner to add next nodecore block
+* nodecore-pop-*.zip - Proof-of-Proof mining
+* nodecore-cli-*.zip - Command Line. Use this to send transactions.
 
 First step is to run a local instance of NodeCore. Whether you mine or use the command line, you'll need a local instance running. For example the command line connects to your local instance, and that local instance connects to the entire network.
 
 # Get each part running 
 
-## Prerequisites 
+First, ensure that Java is running. Install Java from here: https://java.com/en/download/.
 
-* Java v1.8
-* Bitcoin Core (TestNet) - If doing PoP Mining TestNet
+Caution: If you use windows, and windows explorer hides "known file extensions", then make sure you are using the correct files (i.e. "Nodecore.bat" and "NodeCore" will both show as "NodeCore"). For this readme, it will be much easier if you know the file extension of every file you're working with.
 
 ## How to run NodeCore 
 
-1. Unzip the zip file
-2. In the bin folder, Add the "nodecore.properties" file as a sibling of nodecore.bat. This will specify your local IP, and the peers that you connect to.
-3. In the bin folder, run either nodecore (for linux) or nodecore.bat (for windows)
+1. Unzip the nodecore-*.zip  file
+2. In the bin folder, add the "nodecore.properties" file as a sibling of nodecore.bat if it does not already exist. This will specify your local IP, and the peers that you connect to. A sample properties file is shown below.
+3. In the bin folder, if windows then run nodecore.bat, if linux then run nodecore
 
 ```
+#Filename = "nodecore.properties". This sits next to nodecore.bat
+#Update <your_public_IP>, get this from a site like https://www.whatismyip.com
+#Use the IPv4 value, such as: 73.92.111.111
+#peer.publish.address=73.92.111.111
 peer.publish.address=<your_public_IP>
 peer.external.hosts=173.199.119.135\:6500,45.76.65.101\:6500
 ```
 
-When you first run NodeCore, it will create several other log files in the bin folder, and load the existing blockchain.
+When you first run NodeCore, it will create several other log files in the bin folder, and load the existing blockchain. 
+
+NodeCore may take several minutes to load all the blocks in the blockchain. See the highest block at https://TestNet.Explore.Veriblock.org. This shows the number of blocks your local instance must load.
 
 ## How to run the Command Line 
 
 1. Ensure that nodecore is running (see previous step)
-2. Unzip VeriBlock.NodeCore.Cli-0.2.0.zip
+2. Unzip nodecore-cli-*.zip
 3. In the bin folder, run either VeriBlock.NodeCore.Cli (for linux) or VeriBlock.NodeCore.Cli.bat (for windows)
-4. Connect to the local instance by running this command "connect 127.0.0.1:10500"
+4. Connect to the local instance by running this command "connect 127.0.0.1:10500". You should see "200 Success".
 5. Type "help" to see all available commands. You should see a list of many commands, such as "getinfo"
-6. Run "getinfo". You should see data back such as
+6. Type "getinfo". You should see data back such as
 
 
 ```
