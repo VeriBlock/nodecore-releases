@@ -25,28 +25,18 @@ Caution: If you use windows, and windows explorer hides "known file extensions",
 
 ## How to run NodeCore 
 
-1. Unzip the nodecore-*.zip  file
-2. In the bin folder, add the "nodecore.properties" file as a sibling of nodecore.bat if it does not already exist. This will specify your local IP, and the peers that you connect to. A sample properties file is shown below.
-3. In the bin folder, if windows then run nodecore.bat, if linux then run nodecore
+1. Unzip the nodecore-*.zip file
+2. In the bin folder, if windows then run nodecore.bat, if linux then run nodecore
 
-```
-#Filename = "nodecore.properties". This sits next to nodecore.bat
-#Update <your_public_IP>, get this from a site like https://www.whatismyip.com
-#Use the IPv4 value, such as: 73.92.111.111
-#peer.publish.address=73.92.111.111
-peer.publish.address=<your_public_IP>
-peer.external.hosts=173.199.119.135\:6500,45.76.65.101\:6500
-```
+When you first run NodeCore, it will create several other log files in the bin folder (nodecore.properties, veriblock.nodecore.log, nodecore.dat, etc...), and load the existing blockchain. 
 
-When you first run NodeCore, it will create several other log files in the bin folder, and load the existing blockchain. 
-
-NodeCore may take several minutes to load all the blocks in the blockchain. See the highest block at https://TestNet.Explore.Veriblock.org. This shows the number of blocks your local instance must load.
+NodeCore may take several minutes to load all the blocks in the blockchain. See the highest block at https://TestNet.Explore.Veriblock.org. This shows the number of blocks your local instance must load. NodeCore will create a cache file such that when you restart it they will load faster next time.
 
 ## How to run the Command Line 
 
 1. Ensure that nodecore is running (see previous step)
 2. Unzip nodecore-cli-*.zip
-3. In the bin folder, run either VeriBlock.NodeCore.Cli (for linux) or VeriBlock.NodeCore.Cli.bat (for windows)
+3. In the bin folder, if windows then run nodecore-cli.bat, if linux then run nodecore-cli
 4. Connect to the local instance by running this command "connect 127.0.0.1:10500". You should see "200 Success".
 5. Type "help" to see all available commands. You should see a list of many commands, such as "getinfo"
 6. Type "getinfo". You should see data back such as
@@ -90,7 +80,7 @@ The PoW Miner helps get the next block added to the VeriBlock blockchain. It wil
 1. Ensure that nodecore is running
 2. In the Command Line, run the "startpool". This will start the UCP NodeCore protocol on port 8501, which the miner needs.
 3. Unzip nodecore-reference-pow.tar
-4. In the bin folder, run either nodecore-reference-pow (for linux) or nodecore-reference-pow.bat (for windows)
+4. In the bin folder, if windows then run nodecore-reference-pow.bat, if linux then run nodecore-reference-pow
 5. Enter the input arguments
  1. How many threads would you like to mine on? --> such as 2 or 8.
  2. What host:port would you like to connect to for mining? --> 127.0.0.1:8501
@@ -144,7 +134,7 @@ Get Bitcoin on the testnet from a faucet. Running PoP requires a small amount of
 
 1. Run a local instance of NodeCore
 2. Unzip nodecore-pop-*.tar
-3. In the bin folder, run either nodecore-pop (for linux) or nodecore-pop.bat (for windows)
+3. In the bin folder, if windows then run nodecore-pop.bat, if linux then run nodecore-pop
 4. You will be prompted for a series of questions. Below is sample inputs. Note that TestNet port is 18332 (not 18333).
 
 ```
@@ -308,7 +298,19 @@ Ensure that the connected NodeCore instance is fully caught up, else it will ret
 rpc (127.0.0.1:10500) > ERROR: [V800] Remote service call failure io.grpc.StatusRuntimeException: UNAVAILABLE
 ```
 
+## My local instance is added as its own peer
+
+Modify the nodecore.properties file (in nodecore\bin) and add the key "peer.publish.address" with your IPv4 value. Get this value from a site like https://www.whatismyip.com
+
+```
+#peer.publish.address=73.92.111.111
+peer.publish.address=<your_public_IP>
+```
+
 ## One of the apps is frozen 
 
 If this is windows, clicking on the console scrollbar may free the application. Hit enter to continue running.
+
+
+
 
