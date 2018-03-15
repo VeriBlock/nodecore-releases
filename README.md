@@ -3,7 +3,6 @@
 
 General links:
 
-* Public wiki for documentation: https://wiki.veriblock.org
 * Block Explorer for TestNet: https://TestNet.Explore.Veriblock.org
 * Submit any technical issues to github: https://github.com/VeriBlock/nodecore-releases
 * Home page: https://www.veriblock.org
@@ -243,7 +242,7 @@ Running gethistory will show a snippet like:
 
 ## Command Line 
 
-The command line uses the public API from NodeCore. A complete reference listing is on the public wiki: [https://wiki.veriblock.org/index.php?title=NodeCore_CommandLine](https://wiki.veriblock.org/index.php?title=NodeCore_CommandLine)
+The command line uses the public API from NodeCore.
 
 Some of the especially useful commands are:
 
@@ -276,7 +275,7 @@ http://testnet.coinsecrets.org/
 ## Where do I get coins to test with? 
 
 * Run the PoW Miner and get block rewards
-* TODO - Send a message to the public community channel, and someone can send you test coins --> TODO, which exact channel?
+* Send a message to the public community channels, and someone can send you test coins
 
 # Troubleshooting 
 
