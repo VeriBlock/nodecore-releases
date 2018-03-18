@@ -7,7 +7,7 @@ NOTE: The direct link to the zip file containing the entire NodeCore Suite is he
 General links:
 
 * Block Explorer for TestNet: https://TestNet.Explore.Veriblock.org
-* Submit any technical issues to github: https://github.com/VeriBlock/nodecore-releases
+* Submit any technical issues to github: https://github.com/VeriBlock/nodecore-releases/issues
 * Home page: https://www.veriblock.org
 
 VeriBlock Proof-of-Proof has 4 components. Each of these will run in their own command window.
@@ -21,14 +21,20 @@ First step is to run a local instance of NodeCore. Whether you mine or use the c
 
 # Get each part running 
 
-First, ensure that Java is running. Install Java from here: https://java.com/en/download/.
+First, ensure that Java is running. Install Java 1.8 from here: https://java.com/en/download/manual.jsp.
 
-Caution: If you use windows, and windows explorer hides "known file extensions", then make sure you are using the correct files (i.e. "Nodecore.bat" and "NodeCore" will both show as "NodeCore"). For this readme, it will be much easier if you know the file extension of every file you're working with.
+Caution: If you use Windows, and Windows explorer hides "known file extensions," then make sure you are using the correct files (i.e. "Nodecore.bat" and "NodeCore" will both show as "NodeCore"). For this readme, it will be much easier if you know the file extension of every file you're working with. The icon of the correct (.bat) file should look like two gears in a box.
 
 ## How to run NodeCore 
 
 1. Unzip the nodecore-*.zip file
-2. In the bin folder, if windows then run nodecore.bat, if linux then run nodecore
+2. In the bin folder, if Windows then run nodecore.bat, if linux then run nodecore
+
+Note: On linux systems, you may need to make the nodecore shell script executable by running the following command:
+
+```
+chmod a+x nodecore
+```
 
 When you first run NodeCore, it will create several other log files in the bin folder (nodecore.properties, veriblock.nodecore.log, nodecore.dat, etc...), and load the existing blockchain. 
 
@@ -36,12 +42,17 @@ NodeCore may take several minutes to load all the blocks in the blockchain. See 
 
 ## How to run the Command Line 
 
+**Note:** If you are having trouble running nodecore-cli on linux, you may need to make nodecore-cli executable:
+```
+chmod a+x nodecore-cli
+```
+
 1. Ensure that nodecore is running (see previous step)
 2. Unzip nodecore-cli-*.zip
-3. In the bin folder, if windows then run nodecore-cli.bat, if linux then run nodecore-cli
+3. In the bin folder, if Windows then run nodecore-cli.bat, if linux then run nodecore-cli
 4. Connect to the local instance by running this command "connect 127.0.0.1:10500". You should see "200 Success".
 5. Type "help" to see all available commands. You should see a list of many commands, such as "getinfo"
-6. Type "getinfo". You should see data back such as
+6. Type "getinfo". You should see data back such as:
 
 
 ```
@@ -79,10 +90,13 @@ rpc (127.0.0.1:10500) > {
 
 The PoW Miner helps get the next block added to the VeriBlock blockchain. It will connect to a local instance of NodeCore, using UCP on port 8501.
 
+**Note: **If you are having trouble running nodecore-reference-pow on linux, you may need to make nodecore-reference-pow executable:
+chmod a+x nodecore-reference-pow
+
 1. Ensure that nodecore is running
-2. In the Command Line, run the "startpool". This will start the UCP NodeCore protocol on port 8501, which the miner needs.
-3. Unzip nodecore-reference-pow.tar
-4. In the bin folder, if windows then run nodecore-reference-pow.bat, if linux then run nodecore-reference-pow
+2. In the NodeCore CLI, run the "startpool" command. This will start the UCP NodeCore protocol on port 8501, which the miner needs.
+3. Unzip nodecore-reference-pow.zip
+4. In the bin folder, if Windows then run nodecore-reference-pow.bat, if linux then run nodecore-reference-pow
 5. Enter the input arguments
  1. How many threads would you like to mine on? --> such as 2 or 8.
  2. What host:port would you like to connect to for mining? --> 127.0.0.1:8501
@@ -94,9 +108,10 @@ The PoW Miner helps get the next block added to the VeriBlock blockchain. It wil
 
 See this Bitcoin page for background info: [https://en.bitcoin.it/wiki/Running_Bitcoin](https://en.bitcoin.it/wiki/Running_Bitcoin)
 
-1. Download Bitcoin Core https://bitcoin.org/en/download, and catch up on testnet. This may take a while depending on your network connection.
-2. Run bitcoin TestNet by passing in the parameter. 
- 1. bitcoin-qt.exe -testnet
+1. Download Bitcoin Core https://bitcoin.org/en/download, run Bitcoin in testnet mode, and allow it to fully sync. This may take a while depending on your network connection.
+2. Run bitcoin TestNet by passing in the testnet parameter:
+ 1. Windows: bitcoin-qt.exe -testnet
+ 2. Linux: bitcoind -testnet
 3. Set up a rpc user and password in the bitcoin.conf file
  1. In Bitcoin Core, goto: Settings > Options > Main (tab) > Open Config File (button).
  2. If prompted with "The configuration file is used to...", then click ok.
@@ -109,35 +124,19 @@ rpcuser=bitcoinrpc
 rpcpassword=someTestNetPassword123
 ```
 
-1. Get an address from unspent
- 1. Goto: Help > Debug Window > Console Tab
- 2. Enter the command "listunspent"
- 3. You will get a JSON result. Pull the value of an address, such as "mwAY47kNhN2TY1nc23Y18aDi4botjpGzAy"
 
-```
-  {
-    "txid": "7111e775e553e44657f650d9a400981455707715ec1c4bf6bc376881a75f7d22",
-    "vout": 1,
-    "address": "mwAY47kNhN2TY1nc23Y18aDi4botjpGzAy",
-    "account": "",
-    "scriptPubKey": "76a914aba57562278e5d543e33a20e5ae1b8427b51ad0988ac",
-    "amount": 0.33900000,
-    "confirmations": 65,
-    "spendable": true,
-    "solvable": true,
-    "safe": true
-  }, 
-```
-
-Get Bitcoin on the testnet from a faucet. Running PoP requires a small amount of Bitcoin. We do not want to endorse a specific faucet, but you can see a list here: https://en.bitcoin.it/wiki/Testnet#Faucets
+Get Bitcoin on the testnet from a faucet. Running PoP requires a small amount of Bitcoin. We do not want to endorse a specific faucet, but you can see a list here: https://en.bitcoin.it/wiki/Testnet#Faucets. Get a new Bitcoin testnet address from your running instance of Bitcoin, and then enter it into one of the testnet sites to receive testnet Bitcoin.
 
 
 **Run the PoP Miner**
 
+**Note: **If you are having trouble running nodecore-reference-pow on linux, you may need to make nodecore-reference-pow executable:
+chmod a+x nodecore-pop
+
 1. Run a local instance of NodeCore
-2. Unzip nodecore-pop-*.tar
-3. In the bin folder, if windows then run nodecore-pop.bat, if linux then run nodecore-pop
-4. You will be prompted for a series of questions. Below is sample inputs. Note that TestNet port is 18332 (not 18333).
+2. Unzip nodecore-pop-*.zip
+3. In the bin folder, if Windows then run nodecore-pop.bat, if linux then run nodecore-pop
+4. You will be prompted for a series of questions. Below is sample inputs. Note that Bitcoin TestNet port is 18332 (not 18333).
 
 ```
 Please enter the VeriBlock NodeCore host [Default: 127.0.0.1](]):
@@ -158,7 +157,7 @@ How many BTC would you like to pay as a transaction fee for each PoP? (Suggested
  > 0.001
 ```
 
-Note that after entering this info once, it will be saved to a ncpop.properties file for future reference.
+Note that after entering this info once, it will be saved to a ncpop.properties file for future reference. If you ever need to change these entries in the future, you can either delete ncpop.properties and restart nodecore-pop (where it will prompt you for new entries), or you can change the entires in the configuration file directly.
 
 Because PoP Mining costs a small amount of BTC, you will be prompted for each transaction with something like: "Press enter to pay 0.001 BTC to perform a PoP! (q to quit)"
 
@@ -177,7 +176,7 @@ Transaction total size: 283 bytes
 Output index: 0
 ```
 
-Drill down on the block explorer, and you will see the proof in the OP_RETURN. Ignore the first 4 characters, look at the last 160 (80 bytes), and that is your proof on the BTC testnet!
+Drill down on the block explorer, and you will see the proof in the OP_RETURN. Ignore the first 4 characters (0x4c refers to the OP_PUSHDATA1 opcode, and 0x50 refers to 80 bytes [the size of our published data] being pushed onto the stack), look at the last 160 (80 bytes), and that is your proof on the BTC testnet!
 
 ```
 OP_RETURN
@@ -188,11 +187,11 @@ OP_RETURN
 
 ## Send transactions across the network  
 
-Using the Command Line, you can send transactions from one address to another.
+Using the Command Line, you can send transactions from one address to another. Note that you must already have VeriBlock coins in your address, which you can acquire by PoW mining.
 
 1. Open the Command Line and connect it to a local instance of NodeCore
 2. run the send command, targeting an address to send TO (the command will be smart enough to pick an address that has sufficient funds) 
-3. run: send 1000 VE2TkS4er4JeZJRnPkSKUdSeaAew5E
+3. run: send 10 VE2TkS4er4JeZJRnPkSKUdSeaAew5E
 4. It will take several minutes for the transaction to get approved by PoW miners and propagated across the network to other nodecore instances
 5. in the meantime, run these command lines to see that transaction: 
  1. getpendingtransactions
@@ -201,42 +200,43 @@ Using the Command Line, you can send transactions from one address to another.
 
 Running gethistory will show a snippet like:
 ```
-        {
-          "type": "signed",
-          "signed": {
-            "signature": "3045022100E6CD7E006A99D357402D2811979C5DC1511BB343ECA1895C2B3D27F43360C49A022005D1012C8180D509E4B69B6BB5E1BB89050128355A8F03AC77A4CCFD1D7795D4",
-            "public_key": "3056301006072A8648CE3D020106052B8104000A034200040AFCD379B9F1880B22A9444301716BBB677335920198BCE4894F2AF9D96C963661C101608541FC337C2E1FD941D39126AC2709902AB647B150C236D456721D13",
-            "signature_index": 2,
-            "transaction": {
-              "size": 56,
-              "txid": "5D2BC42D4FD25EB17F64E00BE51B718449B7B0FE844541855E35D5136B5F1F8C",
-              "data": "",
-              "type": "standard",
-              "fee": 1,
-              "timestamp": 0,
-              "source_amount": 2334,
-              "merkle_path": "",
-              "source_address": "V89fUr16YU6zmAGfr1wVN3Gwa7bgcy",
-              "bitcoin_transaction": "",
-              "bitcoin_block_header_of_proof": "",
-              "endorsed_block_header": "",
-              "context_bitcoin_block_headers": [              "outputs": [
-                {
-                  "address": "V7ePN8RRX4ULYuGdec7QWnQbqDx6gQ",
-                  "amount": 2333
-                }
-              ](],)
-            }
-          }
-        }
+"type": "signed",
+"signed": {
+	"signature": "304502200FC3D7106A824CCD9B2E6217EA5D33CD817A4CBE81B1C8EEF8B4998816130F9A022100C1823209EABA935149D521646BF543B45F9325C5547B4B44B93CD0B47D31E718",
+	"public_key": "3056301006072A8648CE3D020106052B8104000A034200040A8B7724ED7892A1BC722CB140971A6A154E95F7605EC0E941C27CEFA9D477D6D8E94E1660CDBC030F3F9297C0221E80C3DF4E328CCC0B9277CEAB095EF03909",
+	"signature_index": 1,
+	"transaction": {
+	  "size": 60,
+	  "txid": "4E5EB2B9CD7C19C0D859E62DC6FD302E3F1BCB9B89E6F2484F58D3785470FC10",
+	  "data": "",
+	  "type": "standard",
+	  "fee": "0.00000001",
+	  "timestamp": 1521399261,
+	  "source_amount": "10.00000000",
+	  "merkle_path": "",
+	  "source_address": "V8geBiWHFHCLCf3K2EjtBq3SyDyDh6",
+	  "bitcoin_transaction": "N/A",
+	  "bitcoin_block_header_of_proof": "N/A",
+	  "endorsed_block_header": "N/A",
+	  "context_bitcoin_block_headers": [
+		"N/A"
+	  ],
+	  "outputs": [
+		{
+		  "address": "V7ePN8RRX4ULYuGdec7QWnQbqDx6gQ",
+		  "amount": "9.99999999"
+		}
+	  ]
+	}
+}
 ```
 
 ## Add new blocks to the blockchain (Proof-of-Work Mining) 
 
 1. Run the PoW Miner per instructions above (start local nodecore, open the command line, run startpool, etc...)
-2. You are mining! As users submit transactions, you'll help add those transactions to the next block
+2. You are mining! As users submit transactions, you'll help add those transactions to the blockchain by including them in your next block (and collecting the transaction fees for doing so)
 
-## Secure to Bitcoin (Proof-of-Proof Mining) 
+## Secure VeriBlock to Bitcoin (Proof-of-Proof Mining) 
 
 1. Run the PoP Miner per instructions above
 2. You are PoP Mining!
@@ -284,7 +284,7 @@ http://testnet.coinsecrets.org/
 
 ## PoW Miner won't start 
 
-Ensure that you run startpool on NodeCore (using the Command Line)
+Ensure that you ran startpool on NodeCore (using the Command Line)
 
 Ensure that you have a local instance of NodeCore already running
 
@@ -311,8 +311,7 @@ peer.publish.address=<your_public_IP>
 
 ## One of the apps is frozen 
 
-If this is windows, clicking on the console scrollbar may free the application. Hit enter to continue running.
-
+If this is Windows, clicking on the console scrollbar may freeze the application. Hit enter to continue running.
 
 
 
