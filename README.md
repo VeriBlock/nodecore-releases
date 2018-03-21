@@ -9,6 +9,7 @@ General links:
 * Block Explorer for TestNet: https://TestNet.Explore.Veriblock.org
 * Submit any technical issues to github: https://github.com/VeriBlock/nodecore-releases/issues
 * Home page: https://www.veriblock.org
+* Wiki: https://wiki.veriblock.org
 
 VeriBlock Proof-of-Proof has 4 components. Each of these will run in their own command window.
 
