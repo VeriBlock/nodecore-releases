@@ -1,5 +1,5 @@
 
-NOTE: The direct link to the zip file containing the entire NodeCore Suite is here (under github releases): https://github.com/VeriBlock/nodecore-releases/releases/download/v0.1.1/nodecore-all-testnet-0.1.1.zip
+NOTE: The direct link to the zip file containing the entire NodeCore Suite is here (under github releases): https://github.com/VeriBlock/nodecore-releases/releases/download/v0.1.2/nodecore-all-testnet-0.1.2.zip
 
 # Change log
 
