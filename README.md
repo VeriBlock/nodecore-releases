@@ -1,6 +1,33 @@
 
 NOTE: The direct link to the zip file containing the entire NodeCore Suite is here (under github releases): https://github.com/VeriBlock/nodecore-releases/releases/download/v0.1.1/nodecore-all-testnet-0.1.1.zip
 
+# Change log
+
+##  0.1.2
+
+### NodeCore
+* Peer to peer network protocol overhauled (Breaking change)
+* TLS support on Admin RPC
+* RPC Password option
+* Added robustness to mining pool operation (Breaking change)
+* Backup wallet RPC endpoint added
+* Fixed a case in which Bitcoin blockchain view was not rolled back when forked
+* Introduced support for multiple networks
+
+### CLI
+* Removed "peer" commands
+* Backup wallet command
+* Added support for TLS
+* Added support for password
+
+### PoW
+* ExtraNonce support added
+
+### PoP
+* Compatibility updates with Bitcoin 0.16.0
+* Added support for SegWit transactions
+
+
 
 # Overview 
 
