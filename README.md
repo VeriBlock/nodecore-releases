@@ -1,7 +1,25 @@
 
-NOTE: The direct link to the zip file containing the entire NodeCore Suite is here (under github releases): https://github.com/VeriBlock/nodecore-releases/releases/download/v0.1.2/nodecore-all-testnet-0.1.2.zip
+NOTE: The direct link to the zip file containing the entire NodeCore Suite is here (under github releases): https://github.com/VeriBlock/nodecore-releases/releases/download/v0.1.3/nodecore-all-testnet-0.1.3.zip
 
 # Change log
+
+##  0.1.3
+
+### PoP Miner
+* New PoP Miner with interactive command line. You no longer need to run a Bitcoin daemon to do Proof-of-Proof
+
+### NodeCore
+* Stability fixes
+
+### NodeCore CommandLine
+* On connect, provide immediate error if cannot connect to a valid endpoint
+* New command to see PoP endorsements: getpopendorsementsinfo
+* Add BTC transaction Id to gettransaction to better see PoP-BTC link
+
+### Relevant new documentation:
+https://wiki.veriblock.org/index.php?title=HowTo_run_PoP_Miner - complete rewrite for new miner
+https://wiki.veriblock.org/index.php?title=PoP_Miner_CommandLine - Command line reference for PoP Miner
+https://wiki.veriblock.org/index.php?title=PoP_Transaction_LifeCycle - overview of a PoP transaction from start to finish
 
 ##  0.1.2
 
@@ -132,84 +150,9 @@ chmod a+x nodecore-reference-pow
 
 ## How to run the PoP Miner 
 
-**Prerequisites:**
+The PoP Miner was rewritten in 0.1.3. This wiki explains how to run it:
 
-See this Bitcoin page for background info: [https://en.bitcoin.it/wiki/Running_Bitcoin](https://en.bitcoin.it/wiki/Running_Bitcoin)
-
-1. Download Bitcoin Core https://bitcoin.org/en/download, run Bitcoin in testnet mode, and allow it to fully sync. This may take a while depending on your network connection.
-2. Run bitcoin TestNet by passing in the testnet parameter:
- 1. Windows: bitcoin-qt.exe -testnet
- 2. Linux: bitcoind -testnet
-3. Set up a rpc user and password in the bitcoin.conf file
- 1. In Bitcoin Core, goto: Settings > Options > Main (tab) > Open Config File (button).
- 2. If prompted with "The configuration file is used to...", then click ok.
- 3. bitcoin.conf (a plaintext file) will open.
- 4. specify the flags like below (server=1, rpcuser=your_username, rpcpassword=your_password), and save the file. Re-click the "Open Config File" to ensure the settings did indeed save (they should have)
-
-```
-server=1
-rpcuser=bitcoinrpc
-rpcpassword=someTestNetPassword123
-```
-
-
-Get Bitcoin on the testnet from a faucet. Running PoP requires a small amount of Bitcoin. We do not want to endorse a specific faucet, but you can see a list here: https://en.bitcoin.it/wiki/Testnet#Faucets. Get a new Bitcoin testnet address from your running instance of Bitcoin, and then enter it into one of the testnet sites to receive testnet Bitcoin.
-
-
-**Run the PoP Miner**
-
-**Note: **If you are having trouble running nodecore-reference-pow on linux, you may need to make nodecore-reference-pow executable:
-chmod a+x nodecore-pop
-
-1. Run a local instance of NodeCore
-2. Unzip nodecore-pop-*.zip
-3. In the bin folder, if Windows then run nodecore-pop.bat, if linux then run nodecore-pop
-4. You will be prompted for a series of questions. Below is sample inputs. Note that Bitcoin TestNet port is 18332 (not 18333).
-
-```
-Please enter the VeriBlock NodeCore host [Default: 127.0.0.1](]):
- > 127.0.0.1
-Please enter the VeriBlock NodeCore port [10500](Default:):
- > 10500
-Please enter the Bitcoin RPC host [127.0.0.1](Default:):
- > 127.0.0.1
-Please enter the Bitcoin RPC port [8332](Default:):
- > 18332
-Please enter a funded Bitcoin address you would like to use for PoP:
- > mwAY47kNhN2TY1nc23Y18aDi4botjpGzAy
-Please enter your Bitcoin RPC username:
- > bitcoinrpc
-Please enter your Bitcoin RPC password:
- > someTestNetPassword123
-How many BTC would you like to pay as a transaction fee for each PoP? (Suggested: 0.001)
- > 0.001
-```
-
-Note that after entering this info once, it will be saved to a ncpop.properties file for future reference. If you ever need to change these entries in the future, you can either delete ncpop.properties and restart nodecore-pop (where it will prompt you for new entries), or you can change the entires in the configuration file directly.
-
-Because PoP Mining costs a small amount of BTC, you will be prompted for each transaction with something like: "Press enter to pay 0.001 BTC to perform a PoP! (q to quit)"
-
-If the PoP Miner appears frozen, hit "ENTER" to proceed.
-
-Go back to your Bitcoin Core, Transactions tab, and you will see PoP Transactions. Drill down on a transaction and you'll see a transaction ID. After a few minutes, this transaction ID should show up on testnet blockexplorers, such as http://testnet.coinsecrets.org.
-
-```
-Status: 0/unconfirmed, in memory pool
-Date: 3/9/2018 14:33
-Debit: 0.00000000 BTC
-Transaction fee: -0.00100000 BTC
-Net amount: -0.00100000 BTC
-Transaction ID: 52bac8bad5c9d71f1adcf166c5ef5e651f269851b1816b61cb99ed62268f512b
-Transaction total size: 283 bytes
-Output index: 0
-```
-
-Drill down on the block explorer, and you will see the proof in the OP_RETURN. Ignore the first 4 characters (0x4c refers to the OP_PUSHDATA1 opcode, and 0x50 refers to 80 bytes [the size of our published data] being pushed onto the stack), look at the last 160 (80 bytes), and that is your proof on the BTC testnet!
-
-```
-OP_RETURN
-4c5000000001000000f29717032fb910956d001e9ae5554540864b4c998cf7233ca3ff78109365086b0e7ad55c480ce9dd55fa6763275aa2eedc0319ca1c0ed60f1df7918c1b4232bfdc584dfdbaa50ae224
-```
+https://wiki.veriblock.org/index.php?title=HowTo_run_PoP_Miner
 
 # Common Use Cases 
 
