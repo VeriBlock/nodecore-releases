@@ -3,7 +3,7 @@ NOTE: The direct link to the zip file containing the entire NodeCore Suite is he
 
 # Change log
 
-##  0.1.3
+##  (Coming soon) 0.1.3
 
 ### PoP Miner
 * New PoP Miner with interactive command line. You no longer need to run a Bitcoin daemon to do Proof-of-Proof
