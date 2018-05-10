@@ -1,7 +1,40 @@
 
-NOTE: The direct link to the zip file containing the entire NodeCore Suite is here (under github releases): https://github.com/VeriBlock/nodecore-releases/releases/download/v0.1.3/nodecore-all-testnet-0.1.3.zip
+NOTE: The direct link to the zip file containing the entire NodeCore Suite is here (under github releases): https://github.com/VeriBlock/nodecore-releases/releases/download/v0.1.4/nodecore-all-testnet-0.1.4.zip
 
 # Change log
+
+##  0.1.4
+
+* Updated Ports: 10500 = MainNet, 10501 = TestNet. When connecting with the NC_CLI to testnet, now use 10501 instead of 10500!
+* The send command now treats the configured fee as the FEE-PER-BYTE to account for the new possibility of a transaction being more than one size in bytes. Consider changing your transactions fees accordingly (NC_CLI has the settxfee command).
+
+### PoW Miner
+* Releasing new GPU Miner
+
+### NodeCore CommandLine
+* New command to show what blocks are protected by PoP: getProtectedChildren, getProtectingParents
+* Add importwallet (related to backupwallet)
+* Fix send bug - If A has 100 and B has 100, then you can send 150, therefore 1 Send command can have multiple transactions. This means send can return multiple transactions.
+
+### PoP Miner
+* Action timeout is now configurable
+* Add Cron Schedule for mining
+
+### Dashboard
+* Pop Usability sections - Address page shows PoP rewards, Transaction Page shows related Bitcoin transactions, Block Detail page shows * PoP payouts
+* Fix difficulty setting to show decoded value
+
+### NodeCore
+* Stability fixes
+
+### Relevant documentation:
+* https://wiki.veriblock.org/index.php?title=HowTo_run_PoP_Miner - updates to page
+* https://wiki.veriblock.org/index.php?title=NodeCore_CommandLine - updates to page for new commands
+* https://wiki.veriblock.org/index.php?title=HowTo_run_PoW_GPU_Miner - release of GPU miner
+* https://wiki.veriblock.org/index.php?title=HowTo_run_PoW_CPU_Miner - moved the existing PoW miner to here
+* https://wiki.veriblock.org/index.php?title=HowTo_run_PoW_Miner - now points to both CPU and GPU miners
+
+
 
 ##  0.1.3
 
