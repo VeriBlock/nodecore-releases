@@ -131,13 +131,13 @@ chmod a+x nodecore-cli
 1. Ensure that nodecore is running (see previous step)
 2. Unzip nodecore-cli-*.zip
 3. In the bin folder, if Windows then run nodecore-cli.bat, if linux then run nodecore-cli
-4. Connect to the local instance by running this command "connect 127.0.0.1:10500". You should see "200 Success".
+4. Connect to the local instance by running this command "connect 127.0.0.1:10501". You should see "200 Success".
 5. Type "help" to see all available commands. You should see a list of many commands, such as "getinfo"
 6. Type "getinfo". You should see data back such as:
 
 
 ```
-rpc (127.0.0.1:10500) > {
+rpc (127.0.0.1:10501) > {
   "payload": {
     "default_address": {
       "address": "V6RRxmzJAhLkeWTzcFzQkQEgP2hC1e",
@@ -303,7 +303,7 @@ The PoP Miner is interactive. A PoP transaction requires a small amount of BTC, 
 Ensure that the connected NodeCore instance is fully caught up, else it will return an error like:
 
 ```
-rpc (127.0.0.1:10500) > ERROR: [V800] Remote service call failure io.grpc.StatusRuntimeException: UNAVAILABLE
+rpc (127.0.0.1:10501) > ERROR: [V800] Remote service call failure io.grpc.StatusRuntimeException: UNAVAILABLE
 ```
 
 ## My local instance is added as its own peer
@@ -318,6 +318,4 @@ peer.publish.address=<your_public_IP>
 ## One of the apps is frozen 
 
 If this is Windows, clicking on the console scrollbar may freeze the application. Hit enter to continue running.
-
-
 
