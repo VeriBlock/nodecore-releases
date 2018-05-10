@@ -7,7 +7,8 @@ The direct link to the GPU miner is: https://github.com/VeriBlock/nodecore-relea
 
 ##  0.1.4
 
-* Updated Ports: 10500 = MainNet, 10501 = TestNet. When connecting with the NC_CLI to testnet, now use 10501 instead of 10500!
+* Updated RPC Ports: TestNet = 10501, MainNet (once it launches) will be 10500. When connecting with the NC_CLI to testnet, now use 10501 instead of 10500!
+* Updated P2P Ports: TestNet = 6501, MainNet (once it launches) will be 6500. If you copied your nodecore.properties file from a previous version, please update "peer.external.hosts" to 6501. If you did not copy the nodecore.properties file, then no action required.
 * The send command now treats the configured fee as the FEE-PER-BYTE to account for the new possibility of a transaction being more than one size in bytes. Consider changing your transactions fees accordingly (NC_CLI has the settxfee command).
 
 ### PoW Miner
