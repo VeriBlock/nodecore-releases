@@ -9,6 +9,7 @@ The direct link to the GPU miner is: https://github.com/VeriBlock/nodecore-relea
 
 ### NodeCore
 * Stability fixes
+* Improves NodeCore to better handle when Bitcoin Testnet gets an extreme number of blocks in a very short period of time.
 
 ### PoW Miner
 * Minor enhancements
