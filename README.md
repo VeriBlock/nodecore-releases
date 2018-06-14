@@ -1,9 +1,18 @@
 
-NOTE: The direct link to the zip file containing the entire NodeCore Suite is here (under github releases): https://github.com/VeriBlock/nodecore-releases/releases/download/v0.1.5/nodecore-all-testnet-0.1.5.zip
+NOTE: The direct link to the zip file containing the entire NodeCore Suite is here (under github releases): https://github.com/VeriBlock/nodecore-releases/releases/download/v0.1.6/nodecore-all-testnet-0.1.6.zip
 
 The direct link to the GPU miner is: https://github.com/VeriBlock/nodecore-releases/releases/download/v0.1.4/nodecore-pow-cuda-0.1.4.zip
 
 # Change log
+
+##  0.1.6
+
+### NodeCore
+* Many stability fixes
+* Blockchain loads much faster
+
+### PoW Miner
+* Add properties file to set command-line input for automated startup
 
 ##  0.1.5
 
