@@ -3,12 +3,11 @@ NOTE: The direct link to the zip file containing the entire NodeCore Suite is he
 
 The direct link to the GPU miner is: https://github.com/VeriBlock/nodecore-releases/releases/download/v0.2.0/nodecore-pow-cuda-0.2.0_windows.zip
 
+# Change log
+
 ##  0.2.0
 
 Full new release
-
-
-# Change log
 
 ##  0.1.7
 
