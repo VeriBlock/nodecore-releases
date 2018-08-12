@@ -1,6 +1,6 @@
 
 NOTE: The direct link to the zip file containing the entire NodeCore Suite is here (under github releases): 
-https://github.com/VeriBlock/nodecore-releases/releases/download/v0.2.9/veriblock-nodecore-all-0.2.9.zip
+https://github.com/VeriBlock/nodecore-releases/releases/download/v0.2.11/veriblock-nodecore-all-0.2.11.zip
 
 The direct link to the GPU miner is: 
 
