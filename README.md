@@ -5,10 +5,10 @@ https://github.com/VeriBlock/nodecore-releases/releases/download/v0.2.12/veriblo
 The direct link to the GPU miner is: 
 
 Windows
-https://github.com/VeriBlock/nodecore-releases/releases/download/v0.2.9/veriblock-nodecore-pow-cuda-0.2.9_1_16_windows.zip
+https://github.com/VeriBlock/nodecore-releases/releases/download/v0.2.13/veriblock-nodecore-pow-cuda-0.2.13_1_4_windows.zip
 
 Linux
-https://github.com/VeriBlock/nodecore-releases/releases/download/v0.2.9/veriblock-nodecore-pow-cuda-0.2.9_1_16_linux.zip
+https://github.com/VeriBlock/nodecore-releases/releases/download/v0.2.13/veriblock-nodecore-pow-cuda-0.2.13_1_4_linux.zip
 
 # Change log
 
