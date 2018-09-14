@@ -1,6 +1,6 @@
 
-NOTE: The direct link to the zip file containing the entire NodeCore Suite is here (under github releases): 
-https://github.com/VeriBlock/nodecore-releases/releases/download/v0.2.17/veriblock-nodecore-all-0.2.17-release.zip
+NOTE: The direct link to the zip file containing the entire NodeCore Suite is here (under github releases):  
+COMING SOON
 
 The direct link to the GPU miner is: 
 
@@ -12,9 +12,10 @@ https://github.com/VeriBlock/nodecore-releases/releases/download/v0.2.15/veriblo
 
 # Change log
 
-##  0.2.0
+##  0.3.0 - High Noon
+* PoP mines to BTC mainnet
 
-Full new release
+##  0.2.0 - Mining Sunrise
 
 ##  0.1.7
 
