@@ -153,7 +153,7 @@ First step is to run a local instance of NodeCore. Whether you mine or use the c
 
 # Get each part running 
 
-First, ensure that Java is running. Install Java 1.8 from here: https://java.com/en/download/manual.jsp.
+First, ensure that Java is running. Install Java 8 from here: https://java.com/en/download/manual.jsp.
 
 Caution: If you use Windows, and Windows explorer hides "known file extensions," then make sure you are using the correct files (i.e. "Nodecore.bat" and "NodeCore" will both show as "NodeCore"). For this readme, it will be much easier if you know the file extension of every file you're working with. The icon of the correct (.bat) file should look like two gears in a box.
 
