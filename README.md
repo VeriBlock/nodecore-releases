@@ -1,6 +1,6 @@
 
 NOTE: The direct link to the zip file containing the entire NodeCore Suite is here (under github releases):  
-https://github.com/VeriBlock/nodecore-releases/releases/download/v0.3.11/veriblock-nodecore-all-0.3.11.zip
+https://github.com/VeriBlock/nodecore-releases/releases/download/v0.3.12/veriblock-nodecore-all-0.3.12.zip
 
 Latest bootstrap file listed on API: https://testnet.explore.veriblock.org/api/stats/download
 
