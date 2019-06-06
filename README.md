@@ -2,7 +2,7 @@ See: https://wiki.veriblock.org/index.php?title=MainNet_Launch_Overview
 
 
 NOTE: The direct link to the zip file containing NodeCore and PoP Miner is here (under github releases):  
-https://github.com/VeriBlock/nodecore-releases/releases/download/v0.4.4/veriblock-nodecore-all-0.4.4.zip
+https://github.com/VeriBlock/nodecore-releases/releases/download/v0.4.5/veriblock-nodecore-all-0.4.5.zip
 
 The NC_CLI is here:
 https://github.com/VeriBlock/nodecore-releases/releases/download/v0.4.3/nodecore-cli-0.4.3.zip
