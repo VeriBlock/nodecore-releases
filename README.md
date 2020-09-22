@@ -11,4 +11,4 @@ https://github.com/VeriBlock/nodecore-releases/releases/download/vProgPoW-GPU-Mi
 https://github.com/VeriBlock/nodecore-releases/releases/download/vProgPoW-GPU-Miner/vProgPoW_VBK-miner-windows-cuda11.zip
 
 The direct link to the GUI Wallet is:  
-https://github.com/VeriBlock/nodecore-releases/releases/download/v0.4.1/nodecore-wallet-ui-0.4.0.zip
+https://github.com/VeriBlock/nodecore-releases/releases/download/v0.4.10-wallet/veriblock-wallet-ui-0.4.10.zip
