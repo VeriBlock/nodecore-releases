@@ -14,4 +14,4 @@ SPV
 https://github.com/VeriBlock/nodecore-releases/releases/download/v0.4.12/veriblock-spv-0.4.12.zip
 
 The direct link to the GUI Wallet is:  
-https://github.com/VeriBlock/nodecore-releases/releases/download/v0.4.10-wallet/veriblock-wallet-ui-0.4.10.zip
+https://github.com/VeriBlock/nodecore-releases/releases/download/v0.4.13/veriblock-wallet-ui-0.4.13-rc.2.zip
