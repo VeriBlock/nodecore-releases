@@ -7,7 +7,8 @@ https://github.com/VeriBlock/nodecore-releases/releases/download/v0.4.13/veriblo
 Most PoW miners will use these steps: https://wiki.veriblock.org/index.php/HowTo_PoW_Mine_VeriBlock
 
 SPV
-https://github.com/VeriBlock/nodecore-releases/releases/download/v0.4.13/veriblock-spv-0.4.13-rc.12.zip
+* https://github.com/VeriBlock/nodecore-releases/releases/download/v0.4.13/veriblock-spv-0.4.13-rc.12.zip
+* Windows installer - https://github.com/VeriBlock/nodecore-releases/releases/download/v0.4.13/VeriBlock_SPV_Wallet_0.4.13.msi
 
 The direct link to the GUI Wallet is:  
 https://github.com/VeriBlock/nodecore-releases/releases/download/v0.4.13/veriblock-wallet-ui-0.4.13-rc.3.zip
