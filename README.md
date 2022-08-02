@@ -2,7 +2,7 @@ See: https://wiki.veriblock.org/index.php?title=MainNet_Launch_Overview
 
 
 NOTE: The direct link to the zip file containing NodeCore Suite is here (under github releases):  
-https://github.com/VeriBlock/nodecore-releases/releases/download/v0.4.13/veriblock-nodecore-all-0.4.13-rc.13.zip
+https://github.com/VeriBlock/nodecore-releases/releases/download/v0.4.13/veriblock-nodecore-all-0.4.13-rc.14.zip
 
 Most PoW miners will use these steps: https://wiki.veriblock.org/index.php/HowTo_PoW_Mine_VeriBlock
 
