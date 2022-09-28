@@ -6,3 +6,79 @@ dummy
 dummy
 [Error] Exit with code=undefined
 
+from qiskit_ibm_runtime import QiskitRuntimeService
+
+options = {
+	'backend_name': 'ibmq_qasm_simulator'
+}
+
+runtime_inputs = {
+	# A PyTorch-compatible loss function. Can
+	# be one of the official
+	# PyTorch loss functions from ``torch.nn.loss``
+	# or a custom function defined
+	# by the user.
+	'loss_func': None, # [object,object] (required)
+
+	# A hybrid QNN model to
+	# be trained.
+	'model': None, # object (required)
+
+	# A PyTorch optimizer to tune
+	# the model parameters.
+	'optimizer': None, # object (required)
+
+	# A PyTorch data loader object
+	# containing the training dataset.
+	'train_data': None, # object (required)
+
+	# The number of total epochs.
+	# Default is 10.
+	# 'epochs': 10, # integer
+
+	# List of hook classes to
+	# interact with the training loop.
+	# 'hooks': None, # [array,object]
+
+	# Whether to apply measurement error
+	# mitigation in form of a
+	# complete measurement fitter to the
+	# measurements. Defaults to False.
+	# 'measurement_error_mitigation': False, # boolean
+
+	# The random seed for `torch.manual_seed(seed).
+	# Default is None.
+	# 'seed': None, # integer
+
+	# The number of shots used
+	# for each circuit evaluation. Defaults
+	# to 1024.
+	# 'shots': 1024, # integer
+
+	# The initial epoch number for
+	# warm-start training. 
+	# 'start_epoch': 0, # integer
+
+	# A PyTorch data loader object
+	# containing the validation dataset.
+	# 'val_data': None # object
+}
+
+service = QiskitRuntimeService(
+	channel='ibm_quantum'
+)
+
+job = service.run(
+	program_id='torch-train',
+	options=options,
+	inputs=runtime_inputs,
+	instance='ibm-q/open/main'
+)
+
+# Job id
+print(job.job_id)
+# See job status
+print(job.status())
+
+# Get results
+result = job.result()
